@@ -9,9 +9,11 @@ const router = express.Router();
 router.get('/test-me', function (req, res){
     console.log('My batch is', abc.name)
     abc.printName()
-    Frist.Welcome() //we are calling welcome funtion in route]
-second.printData()//we are calling  data function
-  Third.Allprogram()//we are calling third fruntion
+    Frist.welcome() //we are calling welcome funtion in route]
+second.printDate()//we are calling  data function
+second.printMonth()
+second.getBatchinfo()
+Third.Allprogram()//we are calling third fruntion
     res.send('My second ever api!')
 });
 

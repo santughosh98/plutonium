@@ -1,4 +1,4 @@
-function Allprogram(){
+const Allprogram = function (){
     let str = "  Santu Ghosh "
     let str2 ="SANTU GHOSH"
     let str3 ="santu ghosh"
