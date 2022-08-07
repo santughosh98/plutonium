@@ -1,10 +1,17 @@
 const express = require('express');
-const abc = require('../introduction/intro')
+const abc = require('../introduction/intro');
+const Frist = require('../logger/logger');//creating require.for welcome.function
+const Welcome= require('../logger/logger');
+const second = require('../Util/halper');// creating require for second task
+const Third = require('../Validator/formatter');// creating require for third task
 const router = express.Router();
 
-router.get('/test-me', function (req, res) {
+router.get('/test-me', function (req, res){
     console.log('My batch is', abc.name)
     abc.printName()
+    Frist.Welcome() //we are calling welcome funtion in route]
+second.printData()//we are calling  data function
+  Third.Allprogram()//we are calling third fruntion
     res.send('My second ever api!')
 });
 
