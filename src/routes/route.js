@@ -14,8 +14,17 @@ second.printDate()//we are calling  data function
 second.printMonth()
 second.getBatchinfo()
 Third.Allprogram()//we are calling third fruntion
-    res.send('My second ever api!')
-});
+
+// let _ = require("lodash");
+    // let months = ["January","february","march","april","may","june","july","august","september","october","november","december"]
+    // console.log (_.chunk(months,4))
+
+   // const _ = require('lodash');
+  //    let Odd_num = [1,3,5,7,9,11,13,15,17,19]
+ // console.log(_.tail(Odd_num));
+
+  //  res.send('My second ever api!')
+//});
 
 
 router.get('/test-you', function(req, res){
