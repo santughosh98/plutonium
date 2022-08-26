@@ -2,6 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const route = require('./routes/route.js');
 const { default: mongoose } = require('mongoose');
+const moment = require("moment")
+const ip = require("ip")
+//const commonMW = require ("../middlewares/commonMiddlewares")
 const app = express();
 
 app.use(bodyParser.json());
@@ -11,19 +14,29 @@ app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.connect("mongodb+srv://functionup-cohort:G0Loxqc9wFEGyEeJ@cluster0.rzotr.mongodb.net/Pritesh8769811-DB?retryWrites=true&w=majority", {
     useNewUrlParser: true
 })
+
 .then( () => console.log("MongoDb is connected"))
 .catch ( err => console.log(err) )
 
-app.use (
+
+
+app.use(
     function (req, res, next) {
-        console.log ("inside GLOBAL MW");
-        next();
-  }
-  );
+        const todayDate = moment().format("DD-MM-YYYY , hh:mm:ss");
+        console.log(todayDate);
+        const ipAddress = ip.address()
+        console.log(ipAddress);
+        const rouPath = req.path
+        console.log(rouPath);
+        res.send({ msg: "allEnd" });
+    }
 
-app.use('/', route);
-
+);
 
 app.listen(process.env.PORT || 3000, function () {
     console.log('Express app running on port ' + (process.env.PORT || 3000))
 });
+
+
+
+
