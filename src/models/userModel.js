@@ -1,19 +1,17 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema( {
-    name: String,
-	balance: {
-        type : Number,
-        default : 100 
+    "firstName" : String,
+    "lastName" : String,
+    "mobile" : String,
+    "emailId" : String,
+    "password" : String,
+    "gender" : String,
+	"isDeleted": {
+        type :Boolean,
+        default :false
     },
-	address: String,
-	age: Number,
-    gender : ["male", "female", "other"] 
+    "age" : Number
 }, { timestamps: true });
 
-module.exports = mongoose.model('User', userSchema) //users
-
-
-
-// String, Number
-// Boolean, Object/json, array
+module.exports = mongoose.model('Jwtuser', userSchema)
